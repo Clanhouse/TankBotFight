@@ -14,24 +14,21 @@
 
 class Tank
 {
-    
+
 public:
-    
-    Tank(int x, int y, int speed);
-    
-    void move(Direction direction);
-    
-    void dead();
-    
-    sf::Sprite& getSprite();
-    
+  Tank(int x, int y, int speed);
+
+  void move(Direction direction);
+
+  void dead();
+
+  sf::Sprite& getSprite();
+
 private:
-    
-    int hp = 0;
-    int dmg = 0;
-    int spd = 0;
-    
-    sf::Texture txt;
-    sf::Sprite sprite;
-    
+  int hp = 0;
+  int dmg = 0;
+  int spd = 0;
+
+  sf::Texture txt;
+  sf::Sprite sprite;
 };

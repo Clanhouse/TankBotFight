@@ -8,19 +8,21 @@
 
 #include "ObstacleClass.hpp"
 
-Obstacle::Obstacle(int x, int y) {
-    if(!txt.loadFromFile("przeszkoda-obedience.jpg")) {
-        return 0;
-    }
-    sprite.setTexture(txt);
-    sprite.setOrigin(sprite.getGlobalBounds().width/2, sprite.getGlobalBounds().height/2);
-    
-    sprite.setPosition(x, y);
-    
-    sprite.scale(0.1, 0.1);
-    
+Obstacle::Obstacle(int x, int y)
+{
+  if (!txt.loadFromFile("przeszkoda-obedience.jpg")) {
+    return 0;
+  }
+  sprite.setTexture(txt);
+  sprite.setOrigin(sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2);
+
+  sprite.setPosition(x, y);
+
+  sprite.scale(0.1, 0.1);
 }
 
-sf::Sprite Obstacle::getSprite() {
-    return sprite;
+sf::Sprite
+Obstacle::getSprite()
+{
+  return sprite;
 }
