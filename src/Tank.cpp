@@ -1,12 +1,12 @@
 //
-//  TankClass.cpp
+//  Tank.cpp
 //  TankBotFight
 //
 //  Created by Emil Panecki on 10/06/2021.
 //  Copyright © 2021 Emil Panecki. All rights reserved.
 //
 
-#include "TankClass.hpp"
+#include "Tank.hpp"
 #include "Direction.hpp"
 #include <stdexcept>
 
@@ -30,16 +30,16 @@ Tank::move(Direction direction)
 
   switch (direction) {
     case Direction::Up:
-      sprite.move(0, -sprite.getGlobalBounds().height);
+      sprite.move(0, -mSpeed);
       break;
     case Direction::Down:
-      sprite.move(0, sprite.getGlobalBounds().height);
+      sprite.move(0, mSpeed);
       break;
     case Direction::Left:
-      sprite.move(-sprite.getGlobalBounds().height, 0);
+      sprite.move(-mSpeed, 0);
       break;
     case Direction::Right:
-      sprite.move(sprite.getGlobalBounds().height, 0);
+      sprite.move(mSpeed, 0);
       break;
   }
 }

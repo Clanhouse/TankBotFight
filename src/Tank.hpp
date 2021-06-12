@@ -25,7 +25,7 @@ public:
   sf::Sprite& getSprite();
 
 private:
-  int mHp = 0;
+  int mHp = 100;
   int mSpeed = 0;
 
   sf::Texture txt;

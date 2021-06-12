@@ -18,8 +18,8 @@
 #include <SFML/Graphics.hpp>
 
 // My Libraries
-#include "ObstacleClass.hpp"
-#include "TankClass.hpp"
+#include "Obstacle.hpp"
+#include "Tank.hpp"
 
 int
 main()
@@ -28,9 +28,9 @@ main()
 
   window.setFramerateLimit(1);
 
-  Tank tankA(400, 300, 0);
+  Tank tank(400, 300, 0);
 
-  Obstacle obstracleA(100, 100);
+  Obstacle obstracle(100, 100);
 
   while (window.isOpen()) {
 
@@ -47,10 +47,10 @@ main()
     }
 
     window.clear();
-    window.draw(tankA.getSprite());
-    window.draw(obstracleA.getSprite());
+    window.draw(tank.getSprite());
+    window.draw(obstracle.getSprite());
     window.display();
   }
 
-  return EXIT_SUCCESS;
+  return 0;
 }

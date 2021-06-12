@@ -1,12 +1,12 @@
 //
-//  ObstacleClass.cpp
+//  Obstacle.cpp
 //  TankBotFight
 //
 //  Created by Emil Panecki on 10/06/2021.
 //  Copyright © 2021 Emil Panecki. All rights reserved.
 //
 
-#include "ObstacleClass.hpp"
+#include "Obstacle.hpp"
 #include <stdexcept>
 
 Obstacle::Obstacle(int x, int y)
