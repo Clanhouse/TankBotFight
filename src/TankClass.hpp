@@ -10,7 +10,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Direction.hpp"
+enum class Direction;
 
 class Tank
 {
@@ -25,9 +25,8 @@ public:
   sf::Sprite& getSprite();
 
 private:
-  int hp = 0;
-  int dmg = 0;
-  int spd = 0;
+  int mHp = 0;
+  int mSpeed = 0;
 
   sf::Texture txt;
   sf::Sprite sprite;

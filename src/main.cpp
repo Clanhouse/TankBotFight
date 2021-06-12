@@ -28,7 +28,7 @@ main()
 
   window.setFramerateLimit(1);
 
-  Tank tankA(400, 300);
+  Tank tankA(400, 300, 0);
 
   Obstacle obstracleA(100, 100);
 

@@ -7,11 +7,12 @@
 //
 
 #include "ObstacleClass.hpp"
+#include <stdexcept>
 
 Obstacle::Obstacle(int x, int y)
 {
-  if (!txt.loadFromFile("przeszkoda-obedience.jpg")) {
-    return 0;
+  if (!txt.loadFromFile("../res/przeszkoda-obedience.jpg")) {
+    throw std::runtime_error("Cannot read graphic file!");
   }
   sprite.setTexture(txt);
   sprite.setOrigin(sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2);

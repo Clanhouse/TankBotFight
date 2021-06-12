@@ -7,11 +7,14 @@
 //
 
 #include "TankClass.hpp"
+#include "Direction.hpp"
+#include <stdexcept>
 
 Tank::Tank(int x, int y, int speed)
+  : mSpeed(speed)
 {
-  if (!txt.loadFromFile("tamiya-135-us-medium-tank-m4-sherman-early-production.jpg")) {
-    return 0;
+  if (!txt.loadFromFile("../res/tamiya-135-us-medium-tank-m4-sherman-early-production.jpg")) {
+    throw std::runtime_error("Cannot read graphic file!");
   }
   sprite.setTexture(txt);
   sprite.setOrigin(sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2);
@@ -19,28 +22,25 @@ Tank::Tank(int x, int y, int speed)
   sprite.setPosition(x, y);
 
   sprite.scale(0.1, 0.1);
-
-  spd = speed;
 }
 
 void
 Tank::move(Direction direction)
 {
 
-  if (direction == Direction::Up) {
-    sprite.move(0, -sprite.getGlobalBounds().height);
-  }
-
-  if (direction == Direction::Down) {
-    sprite.move(0, sprite.getGlobalBounds().height);
-  }
-
-  if (direction == Direction::Right) {
-    sprite.move(sprite.getGlobalBounds().height, 0);
-  }
-
-  if (direction == Direction::Left) {
-    sprite.move(-sprite.getGlobalBounds().height, 0);
+  switch (direction) {
+    case Direction::Up:
+      sprite.move(0, -sprite.getGlobalBounds().height);
+      break;
+    case Direction::Down:
+      sprite.move(0, sprite.getGlobalBounds().height);
+      break;
+    case Direction::Left:
+      sprite.move(-sprite.getGlobalBounds().height, 0);
+      break;
+    case Direction::Right:
+      sprite.move(sprite.getGlobalBounds().height, 0);
+      break;
   }
 }
 
