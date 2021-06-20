@@ -5,6 +5,6 @@ int
 main()
 {
   Board b;
-  std::jthread main(&Board::run, &b);
+  b.run();
   return 0;
 }
