@@ -1,0 +1,8 @@
+message RegisterRequest {
+}
+
+message RegisterResponse {
+    required int32 id
+    required string password
+}
+

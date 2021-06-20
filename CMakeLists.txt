@@ -23,4 +23,15 @@ target_include_directories(tank_bot_fight PRIVATE src)
 
 target_link_libraries(tank_bot_fight sfml-graphics)
 
+find_package(Protobuf REQUIRED
+    PATHS ${PROTOBUF_SEARCH_PATH}
+)
+
+if (NOT ${Protobuf_FOUND})
+    message( FATAL_ERROR "Could not find Protobuf!" )
+endif()    
+
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS Foo.proto)
+
 add_subdirectory(test)
+add_subdirectory(proto)
