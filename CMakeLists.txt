@@ -10,6 +10,9 @@ find_package(SFML 2.5.1 COMPONENTS graphics REQUIRED)
 
 add_executable(tank_bot_fight 
     src/main.cpp 
+    src/Background.cpp
+    src/Board.cpp
+    src/Ground.cpp
     src/Tank.cpp 
     src/Obstacle.cpp)
 
@@ -22,7 +25,7 @@ endif()
 target_include_directories(tank_bot_fight PRIVATE src 
     ${CMAKE_CURRENT_BINARY_DIR}/proto)
 
-target_link_libraries(tank_bot_fight sfml-graphics)
+target_link_libraries(tank_bot_fight sfml-graphics pthread)
 
 add_subdirectory(test)
 add_subdirectory(proto)

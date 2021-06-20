@@ -15,8 +15,7 @@
 Tank::Tank(int x, int y, float speed)
   : mSpeed(speed)
 {
-  if (!txt.loadFromFile(files::default_size_path() +
-                        "tank_green.png")) {
+  if (!txt.loadFromFile(files::default_size_path() + "tank_green.png")) {
     throw std::runtime_error("Cannot a read graphic file!");
   }
   sprite.setTexture(txt);
