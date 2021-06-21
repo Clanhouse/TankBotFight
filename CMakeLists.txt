@@ -14,6 +14,7 @@ add_executable(tank_bot_fight
     src/Board.cpp
     src/Ground.cpp
     src/Tank.cpp 
+    src/TextureStore.cpp 
     src/Obstacle.cpp)
 
 if(MSVC)

@@ -20,7 +20,7 @@ jobs:
       run: |
         echo "deb http://mirrors.kernel.org/ubuntu hirsute main universe" | sudo tee /etc/apt/sources.list.d/gcc-11.list 
         sudo apt-get update
-        sudo apt-get install -y gcc-11 g++-11 libsfml-dev xvfb clang-format
+        sudo apt-get install -y gcc-11 g++-11 libsfml-dev xvfb clang-format libprotobuf-dev
 
     - name: Check formatting
       run: |
