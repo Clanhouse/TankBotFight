@@ -1,5 +1,4 @@
 #include "Board.hpp"
-#include <thread>
 
 int
 main()

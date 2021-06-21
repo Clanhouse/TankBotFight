@@ -29,4 +29,3 @@ target_include_directories(tank_bot_fight PRIVATE src
 target_link_libraries(tank_bot_fight sfml-graphics pthread)
 
 add_subdirectory(test)
-add_subdirectory(proto)
