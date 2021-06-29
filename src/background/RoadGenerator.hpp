@@ -32,27 +32,6 @@ enum Pattern {
    * * * | *
    * * * | */
   SingleCrossroad,
-  //    /* * | * *
-  //     * * | * *
-  //     * * | * *
-  //     * * L - -
-  //     * * * * */
-  //    UpperRight,
-  //    UpperLeft,
-  //    LowerRight,
-  //    LowerLeft,
-  //    /* * * * *
-  //     - - - - -
-  //     * * | * *
-  //     * * | * *
-  //     * * | * */
-  //    LetterT,
-  //    /* * | * *
-  //     * * | * *
-  //     - - - - -
-  //     * * * * *
-  //     * * * * */
-  //    ReversedT
   Size
 };
 }
