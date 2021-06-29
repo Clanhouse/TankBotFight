@@ -22,6 +22,11 @@ std::array<std::optional<GroundType>, 4> BackgroundTextureName::get_neighbors(
   return {get_elem(x, y - 1), get_elem(x + 1, y), get_elem(x - 1, y), get_elem(x, y + 1)};
 }
 
+bool BackgroundTextureName::is_crossroad(const GroundTypeVec& v, int x, int y) {
+  return std::ranges::count_if(get_neighbors(v, x, y),
+                               [](const auto& el) { return el && el->mIsRoad; }) > 2;
+}
+
 bool BackgroundTextureName::is_vertical_road(const GroundTypeVec& v, int x, int y) {
   const auto [left, up, down, right] = get_neighbors(v, x, y);
 
@@ -71,7 +76,9 @@ std::string BackgroundTextureName::get_road(const GroundTypeVec& v, int x, int y
   } else if (is_horizontal_road(v, x, y)) {
     texture_name += "East.png";
   }
-
+  if (is_crossroad(v, x, y)) {
+    texture_name += one_of("CrossingRound.png"s, "Crossing.png"s);
+  }
   return texture_name;
 }
 

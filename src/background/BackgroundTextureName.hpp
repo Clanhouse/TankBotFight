@@ -16,4 +16,5 @@ class BackgroundTextureName {
                                                                 int y);
   static bool is_vertical_road(const GroundTypeVec& v, int x, int y);
   static bool is_horizontal_road(const GroundTypeVec& v, int x, int y);
+  static bool is_crossroad(const GroundTypeVec& v, int x, int y);
 };
